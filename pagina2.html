@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Centro de Monitoramento Digital</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<div class="pattern-bg"></div>
+
+<div class="dashboard">
+
+    <h1 class="titulo-dashboard">Centro de Monitoramento Digital</h1>
+
+<div class="card-dashboard">
+    <h3>Nível de Risco Digital</h3>
+
+    <div class="barra-risco">
+        <div class="nivel" id="nivelRisco"></div>
+    </div>
+
+    <p id="textoRisco">Risco Atual: 0%</p>
+</div>
+
+<div class="card-dashboard">
+    <h3>Análise de Comportamento</h3>
+
+    <div class="pergunta">
+        <p>Você usa a mesma senha em vários sites?</p>
+      <button onclick="responder(this, 20)">Sim</button>
+<button onclick="responder(this, 0)">Não</button>
+    </div>
+
+    <div class="pergunta">
+        <p>Você verifica se o site é seguro (HTTPS)?</p>
+        <button onclick="responder(this, 0)">Sim</button>
+<button onclick="responder(this, 10)">Não</button>
+    </div>
+
+    <div class="pergunta">
+        <p>Você já clicou em links suspeitos?</p>
+        <button onclick="responder(this, 20)">Sim</button>
+<button onclick="responder(this, 0)">Não</button>
+    </div>
+
+    <div class="pergunta">
+    <p>Você utiliza autenticação em dois fatores (2FA)?</p>
+    <button onclick="responder(this, 0)">Sim</button>
+    <button onclick="responder(this, 20)">Não</button>
+</div>
+
+<div class="pergunta">
+    <p>Você mantém seus aplicativos e sistema atualizados?</p>
+    <button onclick="responder(this, 0)">Sim</button>
+    <button onclick="responder(this, 15)">Não</button>
+</div>
+
+<div class="pergunta">
+    <p>Você já compartilhou informações pessoais em redes públicas?</p>
+    <button onclick="responder(this, 20)">Sim</button>
+    <button onclick="responder(this, 0)">Não</button>
+</div>
+
+<div class="pergunta">
+    <p>Você lê permissões antes de instalar aplicativos?</p>
+    <button onclick="responder(this, 0)">Sim</button>
+    <button onclick="responder(this, 15)">Não</button>
+</div>
+
+    <div class="card-dashboard" id="recomendacoesCard">
+    <h3>Recomendações de Segurança</h3>
+    <div id="recomendacoes">
+        <p>Responda às perguntas para gerar recomendações personalizadas.</p>
+    </div>
+
+</div>
+
+<script src="script2.js"></script>
+
+</body>
+</html>

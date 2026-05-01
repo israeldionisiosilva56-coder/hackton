@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Consciência Digital</title>
+    <link rel="stylesheet" href="style.css" />
+    <a href="pagina2.html"></a>
+  </head>
+  <body>
+
+    <!-- FUNDO ANIMADO -->
+<div class="pattern-bg">
+  <svg
+    preserveAspectRatio="xMidYMid slice"
+    class="cube-svg"
+    viewBox="0 0 120 104"
+  >
+    <defs>
+      <linearGradient y2="100%" x2="100%" y1="0%" x1="0%" id="cube-dark">
+        <stop stop-color="#232526" offset="0%"></stop>
+        <stop stop-color="#414345" offset="100%"></stop>
+      </linearGradient>
+      <linearGradient y2="0%" x2="100%" y1="100%" x1="0%" id="cube-mid">
+        <stop stop-color="#4b6cb7" offset="0%"></stop>
+        <stop stop-color="#182848" offset="100%"></stop>
+      </linearGradient>
+      <linearGradient y2="100%" x2="0%" y1="0%" x1="100%" id="cube-light">
+        <stop stop-color="#a8edea" offset="0%"></stop>
+        <stop stop-color="#fed6e3" offset="100%"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+    <div class="card">
+      <h2>Termos e Condições</h2>
+      <p>
+        Ao utilizar este site, você concorda com nossos termos de uso e
+        políticas de privacidade.
+      </p>
+
+      <span class="ler-mais" id="lerMais">Ler mais</span>
+
+      <label class="checkbox-area">
+        <input type="checkbox" id="aceitar" />
+        Eu li e aceito os termos
+      </label>
+    </div>
+
+    <!-- Modal Sermão -->
+    <div class="overlay" id="overlaySermão">
+      <div class="modal">
+        <h2>⚠ Você realmente leu?</h2>
+        <p>
+          Estudos mostram que mais de 90% das pessoas aceitam termos sem ler.
+          <br /><br />
+          Ao aceitar algo sem entender você pode estar entregando seus dados sua
+          privacidade e sua segurança.
+          <br /><br />
+          🔎 Cidadania digital começa com consciência.
+        </p>
+        <button onclick="fecharSermão()">Entendi</button>
+      </div>
+    </div>
+
+    <!-- Parabéns -->
+    <div class="overlay" id="overlayParabens">
+      <div class="modal">
+        <h2>👏 Parabéns!</h2>
+        <p>
+          Você demonstrou consciência digital ao buscar ler os termos antes de
+          aceitar.
+          <br /><br />
+          Pessoas assim tornam a internet mais segura!
+        </p>
+        <button onclick="fecharParabens()">Obrigado!</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Botão Avançar -->
+    <a href="pagina2.html" class="botao-avancar" id="btnAvancar" title="Botão avançar">
+    →
+</a>
+    
+<!-- Tela de Transição -->
+<div class="transicao" id="transicao">
+    <div class="loader">
+        <p id="textoCarregando">Inicializando sistema...</p>
+
+        <div class="barra-container">
+            <div class="barra" id="barra"></div>
+        </div>
+
+        <p id="porcentagem">0%</p>
+    </div>
+</div>
+
+<!-- Som futurista -->
+<audio id="somTransicao">
+    <source src="som.mp3/som.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+
+  </body>
+</html>
