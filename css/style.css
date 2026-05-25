@@ -419,7 +419,7 @@ nav {
 
 .btn-glow-ring {
     position: absolute;
-    inset: -5px;
+    inset: -2px;
     border: 1px solid rgba(0, 212, 255, 0.3);
     clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
     animation: ringPulse 2s ease-in-out infinite;

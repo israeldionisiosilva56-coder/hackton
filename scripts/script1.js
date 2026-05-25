@@ -60,6 +60,12 @@ function triggerGlitch() {
 // PLAY BUTTON
 // ==============================
 function handlePlay() {
+    // --- CÓDIGO DO SOM ADICIONADO AQUI ---
+    const somInicio = document.getElementById('som-inicio');
+    somInicio.currentTime = 0; // Reseta o som se a pessoa clicar rápido de novo
+    somInicio.play();          // Toca o som
+    // ------------------------------------
+
     const btn = document.querySelector('.play-btn');
 
     // Visual feedback
@@ -88,7 +94,7 @@ function handlePlay() {
     // ✅ Efeito termina normalmente e SÓ DEPOIS redireciona
     setTimeout(function () {
         window.location.href = 'pagina1.html';
-    }, 500);
+    }, 1000);
 }
 
 // ==============================

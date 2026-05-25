@@ -94,14 +94,16 @@
             <p class="subtitle">Programando sob pressão, vencendo com precisão</p>
         </div>
 
-        <!-- Play Button -->
-        <div class="play-section">
-            <button class="play-btn" onclick="handlePlay()">
-                <div class="btn-glow-ring"></div>
-                <span class="play-icon"></span>
-                INICIAR AGORA
-            </button>
-        </div>
+ <div class="play-section">
+    <!-- Tag de áudio adicionada aqui -->
+    <audio id="som-inicio" src="../public/sounds/start.mp3" preload="auto"></audio>
+
+    <button class="play-btn" onclick="handlePlay()">
+        <div class="btn-glow-ring"></div>
+        <span class="play-icon"></span>
+        INICIAR AGORA
+    </button>
+</div> >
 
     <!-- Status Bar -->
     <div class="status-bar">
