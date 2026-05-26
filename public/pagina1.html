@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Termos e Condições</title>
     <link rel="stylesheet" href="../css/style2.css" />
-    <link rel="sounds" href="../sounds/som.mp3" />
     <a href="pagina2.html"></a>
   </head>
 
   <body>
+
+      <!-- Áudio -->
+  <audio id="musica" autoplay loop>
+    <source src="../public/sounds/fundo.mp3" type="audio/mpeg">
+  </audio>
+
     <!-- FUNDO ANIMADO -->
     <div class="pattern-bg"></div>
 
@@ -68,31 +73,43 @@
       ✋ Aceite os termos primeiro
     </div>
 
-    <!-- Botão Avançar -->
-    <div
-      class="botao-avancar bloqueado"
-      id="btnAvancar"
-      title="Aceite os termos para avançar"
-      onclick="tentarAvancar()"
-    >
-      →
+<!-- Botão Avançar -->
+<div
+  class="botao-avancar bloqueado"
+  id="btnAvancar"
+  title="Aceite os termos para avançar"
+  onclick="tentarAvancar()"
+>
+  →
+</div>
+
+<!-- Som -->
+<audio id="somClique">
+  <source src="../public/sounds/transição.mp3" type="audio/mpeg">
+</audio>
+
+<div class="transicao" id="transicao">
+
+  <div class="loader">
+
+    <div class="transicao-logo">
+      SISTEMA DE ANÁLISE
     </div>
 
-    <!-- Tela de Transição -->
-    <div class="transicao" id="transicao">
-      <div class="loader">
-        <p id="textoCarregando">Inicializando sistema...</p>
-        <div class="barra-container">
-          <div class="barra" id="barra"></div>
-        </div>
-        <p id="porcentagem">0%</p>
-      </div>
-    <!-- Som -->
-    <audio id="somClique">
-      <source src="../sounds/som.mp3" type="audio/mpeg" />
-    </audio>
+    <p id="textoCarregando">
+      Inicializando sistema...
+    </p>
+
+    <div class="barra-container">
+      <div class="barra" id="barra"></div>
     </div>
-    
+
+    <p id="porcentagem">0%</p>
+
+  </div>
+
+</div>
+
     <script src="../scripts/script2.js"></script>
   </body>
 </html>

@@ -69,30 +69,9 @@ function fecharSermao() {
 }
 
 // ==============================
-// BOTÃO AVANÇAR
+// MENSAGENS DA TRANSIÇÃO
 // ==============================
-function atualizarBotao() {
-  const btn = document.getElementById('btnAvancar');
-  if (aceitouTermos) {
-    btn.classList.remove('bloqueado');
-  } else {
-    btn.classList.add('bloqueado');
-  }
-}
 
-function tentarAvancar() {
-  if (!aceitouTermos) {
-    const tooltip = document.getElementById('tooltipBloqueado');
-    tooltip.classList.add('visivel');
-    setTimeout(() => tooltip.classList.remove('visivel'), 2000);
-    return;
-  }
-  iniciarTransicao();
-}
-
-// ==============================
-// TELA DE TRANSIÇÃO
-// ==============================
 const mensagensCarregando = [
   'Inicializando sistema...',
   'Verificando permissões...',
@@ -101,43 +80,117 @@ const mensagensCarregando = [
   'Quase lá...'
 ];
 
+// ==============================
+// BOTÃO AVANÇAR
+// ==============================
+
+function atualizarBotao() {
+
+  const btn = document.getElementById('btnAvancar');
+
+  if (aceitouTermos) {
+    btn.classList.remove('bloqueado');
+  } else {
+    btn.classList.add('bloqueado');
+  }
+}
+
+function tentarAvancar() {
+
+  if (!aceitouTermos) {
+
+    const tooltip = document.getElementById('tooltipBloqueado');
+
+    tooltip.classList.add('visivel');
+
+    setTimeout(() => {
+      tooltip.classList.remove('visivel');
+    }, 2000);
+
+    return;
+  }
+
+  // TOCA SOM
+  const som = document.getElementById('somClique');
+
+  som.play();
+
+  // INICIA TRANSIÇÃO ORIGINAL
+  iniciarTransicao();
+
+}
+
+// ==============================
+// TELA DE TRANSIÇÃO
+// ==============================
+
 function iniciarTransicao() {
+
   const transicao = document.getElementById('transicao');
   const barra     = document.getElementById('barra');
+
   const porcEl    = document.getElementById('porcentagem');
   const textoEl   = document.getElementById('textoCarregando');
 
+  // MOSTRA TELA
   transicao.classList.add('ativa');
 
   let progresso = 0;
   let msgIndex  = 0;
 
-  const intervalo = setInterval(function () {
+  const intervalo = setInterval(() => {
+
     const incremento = Math.random() * 3 + 1;
+
     progresso = Math.min(progresso + incremento, 100);
 
-    barra.style.width  = progresso + '%';
+    // BARRA
+    barra.style.width = progresso + '%';
+
+    // TEXTO %
     porcEl.textContent = Math.floor(progresso) + '%';
 
-    const novoIndex = Math.floor((progresso / 100) * mensagensCarregando.length);
-    if (novoIndex !== msgIndex && novoIndex < mensagensCarregando.length) {
+    // TROCA MENSAGENS
+    const novoIndex = Math.floor(
+      (progresso / 100) * mensagensCarregando.length
+    );
+
+    if (
+      novoIndex !== msgIndex &&
+      novoIndex < mensagensCarregando.length
+    ) {
+
       msgIndex = novoIndex;
+
       textoEl.classList.add('glitch-active');
-      textoEl.textContent = mensagensCarregando[msgIndex];
-      setTimeout(() => textoEl.classList.remove('glitch-active'), 300);
+
+      textoEl.textContent =
+        mensagensCarregando[msgIndex];
+
+      setTimeout(() => {
+        textoEl.classList.remove('glitch-active');
+      }, 300);
     }
 
+    // FINALIZA
     if (progresso >= 100) {
+
       clearInterval(intervalo);
-      porcEl.textContent  = '100%';
-      barra.style.width   = '100%';
+
+      porcEl.textContent = '100%';
+
+      barra.style.width = '100%';
+
       textoEl.textContent = 'Concluído! ✓';
 
-      setTimeout(function () {
-        // Redireciona para a próxima página
+      setTimeout(() => {
+
+        // PRÓXIMA PÁGINA
         window.location.href = 'pagina2.html';
+
       }, 600);
     }
+
   }, 60);
 }
 
