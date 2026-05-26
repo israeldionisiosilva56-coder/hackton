@@ -110,14 +110,37 @@ function tentarAvancar() {
     return;
   }
 
-  // TOCA SOM
+  // ÁUDIOS
+  const musicaFundo = document.getElementById('musicaFundo');
   const som = document.getElementById('somClique');
 
+  // FADE OUT SUAVE
+  let volume = musicaFundo.volume;
+
+  const fadeAudio = setInterval(() => {
+
+    if (volume > 0.05) {
+
+      volume -= 0.05;
+
+      musicaFundo.volume = volume;
+
+    } else {
+
+      musicaFundo.pause();
+
+      musicaFundo.volume = 1;
+
+      clearInterval(fadeAudio);
+    }
+
+  }, 50);
+
+  // SOM DO BOTÃO
   som.play();
 
-  // INICIA TRANSIÇÃO ORIGINAL
+  // TRANSIÇÃO
   iniciarTransicao();
-
 }
 
 // ==============================
