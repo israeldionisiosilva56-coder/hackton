@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberSentinels — Central</title>
+    <link rel="stylesheet" href="../css/style5.css" />
+  </head>
+
+  <body>
+    <!-- GRID DE FUNDO -->
+    <div class="grid"></div>
+
+    <!-- PARTÍCULAS -->
+    <div class="particulas"></div>
+
+    <!-- CANTOS DE TELA -->
+    <div class="corner corner--tl"></div>
+    <div class="corner corner--tr"></div>
+    <div class="corner corner--bl"></div>
+    <div class="corner corner--br"></div>
+
+    <!-- HUD SUPERIOR -->
+    <div class="hud-bar">
+      <div class="hud-item">
+        <span class="hud-label">NÍVEL</span>
+        <span class="hud-value">07</span>
+      </div>
+      <span class="hud-sep">|</span>
+      <div class="hud-item">
+        <span class="hud-label">SESSÃO</span>
+        <span class="hud-value" id="hudSessao">——</span>
+      </div>
+      <span class="hud-sep">|</span>
+      <div class="hud-item">
+        <span class="hud-label">STATUS</span>
+        <span class="hud-value">ATIVO</span>
+      </div>
+      <span class="hud-sep">|</span>
+      <div class="hud-item">
+        <span class="hud-label">HORA</span>
+        <span class="hud-value" id="hudHora">——:——</span>
+      </div>
+    </div>
+
+    <!-- ================================
+       CONTEÚDO DA CENTRAL (bloqueado)
+  ================================= -->
+    <div class="central-wrapper" id="centralWrapper">
+      <div class="central-content">
+        <div class="central-title">
+          CENTRAL DE <span style="color: var(--cyan)">MONITORAMENTO</span>
+        </div>
+        <div class="central-sub">// DASHBOARD OPERACIONAL //</div>
+      </div>
+    </div>
+
+    <!-- ================================
+       MODAL DE BOAS-VINDAS
+  ================================= -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitulo"
+      >
+        <div class="modal-inner">
+          <!-- CANTOS -->
+          <div class="mc mc--tl"></div>
+          <div class="mc mc--tr"></div>
+          <div class="mc mc--bl"></div>
+          <div class="mc mc--br"></div>
+
+          <!-- TAG SUPERIOR -->
+          <div class="modal-tag">BRIEFING INICIAL</div>
+
+          <!-- ÍCONE -->
+          <div class="modal-icon">
+            <svg
+              viewBox="0 0 52 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="26"
+                cy="26"
+                r="24"
+                stroke="rgba(0,240,255,0.2)"
+                stroke-width="1"
+                stroke-dasharray="4 5"
+                stroke-linecap="round"
+              />
+              <circle
+                cx="26"
+                cy="26"
+                r="18"
+                stroke="rgba(0,240,255,0.45)"
+                stroke-width="0.5"
+              />
+            </svg>
+            <span class="modal-icon-char">◈</span>
+          </div>
+
+          <!-- TÍTULO -->
+          <h1 class="modal-title" id="modalTitulo">
+            BEM-<span class="accent">VINDO</span>
+          </h1>
+
+          <!-- ID DE SESSÃO -->
+          <div class="modal-sid" id="modalSid">SID :: ————————</div>
+
+          <!-- LINHA -->
+          <div class="title-line"></div>
+
+          <!-- INTRODUÇÃO -->
+          <p class="modal-intro">
+            Você está acessando a
+            <strong style="color: #fff"
+              >Central de Monitoramento Digital</strong
+            >
+            da CyberSentinels. Este sistema foi desenvolvido para garantir foco,
+            produtividade e segurança digital em tempo real.
+          </p>
+
+          <!-- FUNCIONALIDADES -->
+          <div class="funcionalidades">
+            <div class="func-item">
+              <span class="func-icon">⊘</span>
+              <div class="func-texto">
+                <div class="func-nome">Bloqueio de Aplicativos</div>
+                <div class="func-desc">
+                  Restringe o acesso a apps selecionados durante períodos de
+                  foco ou por regras configuradas pelo administrador.
+                </div>
+              </div>
+            </div>
+
+            <div class="func-item">
+              <span class="func-icon">◷</span>
+              <div class="func-texto">
+                <div class="func-nome">Monitoramento de Tempo de Tela</div>
+                <div class="func-desc">
+                  Registra e analisa o tempo de uso por aplicativo, categoria e
+                  período do dia em tempo real.
+                </div>
+              </div>
+            </div>
+
+            <div class="func-item">
+              <span class="func-icon">⬡</span>
+              <div class="func-texto">
+                <div class="func-nome">Relatórios de Atividade</div>
+                <div class="func-desc">
+                  Gera relatórios detalhados de produtividade com gráficos,
+                  tendências e comparativos semanais.
+                </div>
+              </div>
+            </div>
+
+            <div class="func-item">
+              <span class="func-icon">◉</span>
+              <div class="func-texto">
+                <div class="func-nome">Alertas e Notificações</div>
+                <div class="func-desc">
+                  Emite alertas automáticos ao detectar uso excessivo, acesso
+                  não autorizado ou comportamento suspeito.
+                </div>
+              </div>
+            </div>
+
+            <div class="func-item">
+              <span class="func-icon">⬢</span>
+              <div class="func-texto">
+                <div class="func-nome">Controle Remoto</div>
+                <div class="func-desc">
+                  Permite ao administrador aplicar restrições, liberar acessos e
+                  ajustar configurações remotamente.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AVISO -->
+          <div class="modal-aviso">
+            <div class="aviso-dot"></div>
+            <div class="aviso-texto">
+              Todas as atividades nesta central são registradas e monitoradas.
+              Ao continuar, você confirma ciência das políticas de uso.
+            </div>
+          </div>
+
+          <!-- SEPARADOR -->
+          <div class="separator">
+            <div class="sep-dot"></div>
+            <div class="sep-dot"></div>
+            <div class="sep-dot"></div>
+          </div>
+
+          <!-- BOTÃO -->
+          <button id="btnContinuar">
+            <span class="btn-scan"></span>
+            CONTINUAR
+          </button>
+
+          <!-- STATUS -->
+          <div class="modal-status">
+            <div class="modal-status-dot"></div>
+            CONEXÃO SEGURA ESTABELECIDA
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="../scripts/script5.js"></script>
+  </body>
+</html>
