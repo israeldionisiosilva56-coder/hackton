@@ -153,35 +153,28 @@ function gerarRecomendacoes() {
 
 /* ── transição ── */
 document.getElementById("btnAvancar").addEventListener("click", function (e) {
-
   e.preventDefault();
 
   // ÁUDIOS
   const musicaFundo = document.getElementById("musicaFundo");
-  const somClique   = document.getElementById("somClique");
+  const somClique = document.getElementById("somClique");
 
   // VOLUME ATUAL
   let volume = musicaFundo.volume;
 
   // FADE OUT DA MÚSICA
   const fadeAudio = setInterval(() => {
-
     volume -= 0.1;
 
     if (volume <= 0) {
-
       musicaFundo.volume = 0;
 
       musicaFundo.pause();
 
       clearInterval(fadeAudio);
-
     } else {
-
       musicaFundo.volume = volume;
-
     }
-
   }, 50);
 
   // SOM DO BOTÃO
@@ -189,9 +182,9 @@ document.getElementById("btnAvancar").addEventListener("click", function (e) {
 
   // TRANSIÇÃO
   const transicao = document.getElementById("transicao");
-  const barra     = document.getElementById("barra");
-  const pct       = document.getElementById("porcentagem");
-  const txt       = document.getElementById("textoCarregando");
+  const barra = document.getElementById("barra");
+  const pct = document.getElementById("porcentagem");
+  const txt = document.getElementById("textoCarregando");
 
   transicao.classList.add("ativa");
 
@@ -200,7 +193,6 @@ document.getElementById("btnAvancar").addEventListener("click", function (e) {
   const passos = MSGS_TRANSICAO.length * 10;
 
   const interval = setInterval(() => {
-
     p++;
 
     const perc = Math.round((p / passos) * 100);
@@ -209,24 +201,16 @@ document.getElementById("btnAvancar").addEventListener("click", function (e) {
 
     pct.textContent = perc + "%";
 
-    const msgIdx = Math.min(
-      Math.floor(p / 10),
-      MSGS_TRANSICAO.length - 1
-    );
+    const msgIdx = Math.min(Math.floor(p / 10), MSGS_TRANSICAO.length - 1);
 
     txt.textContent = MSGS_TRANSICAO[msgIdx];
 
     if (perc >= 100) {
-
       clearInterval(interval);
 
       setTimeout(() => {
-
         window.location.href = "pagina3.html";
-
       }, 500);
     }
-
   }, 50);
-
 });

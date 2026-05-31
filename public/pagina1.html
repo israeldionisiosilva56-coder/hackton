@@ -9,11 +9,10 @@
   </head>
 
   <body>
-
-      <!-- Áudio de fundo -->
-<audio id="musicaFundo" autoplay loop>
-  <source src="../public/sounds/fundo.mp3" type="audio/mpeg">
-</audio>
+    <!-- Áudio de fundo -->
+    <audio id="musicaFundo" autoplay loop>
+      <source src="../public/sounds/fundo.mp3" type="audio/mpeg" />
+    </audio>
 
     <!-- FUNDO ANIMADO -->
     <div class="pattern-bg"></div>
@@ -73,42 +72,34 @@
       ✋ Aceite os termos primeiro
     </div>
 
-<!-- Botão Avançar -->
-<div
-  class="botao-avancar"
-  id="btnAvancar"
-  title="Aceite os termos para avançar"
-  onclick="tentarAvancar()"
->
-  →
-</div>
-
-<!-- Som -->
-<audio id="somClique">
-  <source src="../public/sounds/transição.mp3" type="audio/mpeg">
-</audio>
-
-<div class="transicao" id="transicao">
-
-  <div class="loader">
-
-    <div class="transicao-logo">
-      SISTEMA DE ANÁLISE
+    <!-- Botão Avançar -->
+    <div
+      class="botao-avancar"
+      id="btnAvancar"
+      title="Aceite os termos para avançar"
+      onclick="tentarAvancar()"
+    >
+      →
     </div>
 
-    <p id="textoCarregando">
-      Inicializando sistema...
-    </p>
+    <!-- Som -->
+    <audio id="somClique">
+      <source src="../public/sounds/transição.mp3" type="audio/mpeg" />
+    </audio>
 
-    <div class="barra-container">
-      <div class="barra" id="barra"></div>
+    <div class="transicao" id="transicao">
+      <div class="loader">
+        <div class="transicao-logo">SISTEMA DE ANÁLISE</div>
+
+        <p id="textoCarregando">Inicializando sistema...</p>
+
+        <div class="barra-container">
+          <div class="barra" id="barra"></div>
+        </div>
+
+        <p id="porcentagem">0%</p>
+      </div>
     </div>
-
-    <p id="porcentagem">0%</p>
-
-  </div>
-
-</div>
 
     <script src="../scripts/script2.js"></script>
   </body>

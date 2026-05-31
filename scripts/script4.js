@@ -3,11 +3,11 @@
 ========================= */
 
 const MSGS_TRANSICAO = [
-  'Inicializando sistema...',
-  'Validando acesso...',
-  'Conectando à central...',
-  'Carregando módulos...',
-  'Acesso autorizado...'
+  "Inicializando sistema...",
+  "Validando acesso...",
+  "Conectando à central...",
+  "Carregando módulos...",
+  "Acesso autorizado...",
 ];
 
 /* =========================
@@ -15,7 +15,6 @@ const MSGS_TRANSICAO = [
 ========================= */
 
 document.getElementById("btnEntrar").addEventListener("click", function () {
-
   /* =========================
      ÁUDIOS
   ========================= */
@@ -35,12 +34,10 @@ document.getElementById("btnEntrar").addEventListener("click", function () {
 
   // Diminui o volume aos poucos
   const fadeAudio = setInterval(() => {
-
     volume -= 0.1;
 
     // Quando chegar em 0
     if (volume <= 0) {
-
       // Garante volume zerado
       musicaFundo.volume = 0;
 
@@ -49,14 +46,10 @@ document.getElementById("btnEntrar").addEventListener("click", function () {
 
       // Para o intervalo
       clearInterval(fadeAudio);
-
     } else {
-
       // Atualiza volume
       musicaFundo.volume = volume;
-
     }
-
   }, 50);
 
   /* =========================
@@ -94,7 +87,6 @@ document.getElementById("btnEntrar").addEventListener("click", function () {
 
   // Intervalo da animação
   const interval = setInterval(() => {
-
     // Incrementa
     p++;
 
@@ -108,10 +100,7 @@ document.getElementById("btnEntrar").addEventListener("click", function () {
     pct.textContent = perc + "%";
 
     // Troca mensagens
-    const msgIdx = Math.min(
-      Math.floor(p / 10),
-      MSGS_TRANSICAO.length - 1
-    );
+    const msgIdx = Math.min(Math.floor(p / 10), MSGS_TRANSICAO.length - 1);
 
     txt.textContent = MSGS_TRANSICAO[msgIdx];
 
@@ -120,19 +109,14 @@ document.getElementById("btnEntrar").addEventListener("click", function () {
     ========================= */
 
     if (perc >= 100) {
-
       // Para loading
       clearInterval(interval);
 
       // Espera um pouco
       setTimeout(() => {
-
         // Vai para página 4
         window.location.href = "pagina4.html";
-
       }, 500);
     }
-
   }, 50);
-
 });

@@ -13,6 +13,16 @@
       <source src="../public/sounds/fundo.mp3" type="audio/mpeg" />
     </audio>
 
+    <!-- SOM DO BOTÃO CONTINUAR -->
+    <audio id="somContinuar">
+      <source src="../public/sounds/transição2.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- SOM DO BOTÃO CONCLUÍDO -->
+    <audio id="somClique">
+      <source src="../public/sounds/concluído.mp3" type="audio/mpeg" />
+    </audio>
+
     <!-- GRID DE FUNDO -->
     <div class="grid"></div>
 
@@ -25,42 +35,14 @@
     <div class="corner corner--bl"></div>
     <div class="corner corner--br"></div>
 
-    <!-- HUD SUPERIOR -->
-    <div class="hud-bar">
-      <div class="hud-item">
-        <span class="hud-label">NÍVEL</span>
-        <span class="hud-value">07</span>
-      </div>
-      <span class="hud-sep">|</span>
-      <div class="hud-item">
-        <span class="hud-label">SESSÃO</span>
-        <span class="hud-value" id="hudSessao">——</span>
-      </div>
-      <span class="hud-sep">|</span>
-      <div class="hud-item">
-        <span class="hud-label">STATUS</span>
-        <span class="hud-value">ATIVO</span>
-      </div>
-      <span class="hud-sep">|</span>
-      <div class="hud-item">
-        <span class="hud-label">HORA</span>
-        <span class="hud-value" id="hudHora">--:--</span>
-      </div>
-    </div>
-
     <!-- CONTEÚDO DA CENTRAL -->
     <div class="central-wrapper" id="centralWrapper">
-      <div class="central-header">
-        <div class="central-tag">DASHBOARD OPERACIONAL</div>
-        <h2 class="central-title">
-          CENTRAL DE <span class="accent">MONITORAMENTO</span>
-        </h2>
-        <p class="central-desc">
-          Configure e monitore as restrições de uso para garantir foco e
-          produtividade.
-        </p>
+      <!-- TÍTULO (some no scroll naturalmente) -->
+      <div class="pagina-titulo">
+        CENTRAL DE <span class="accent">MONITORAMENTO</span>
       </div>
 
+      <!-- CARDS -->
       <div class="cards-grid">
         <!-- CARD 1 -->
         <div class="card" id="card-bloqueio">
@@ -85,39 +67,34 @@
             </p>
             <div class="app-list">
               <label class="app-toggle"
-                ><input type="checkbox" data-card="bloqueio" />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>Instagram</span></label
+                ><input type="checkbox" data-card="bloqueio" /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>Instagram</span></label
               >
               <label class="app-toggle"
-                ><input type="checkbox" data-card="bloqueio" />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>TikTok</span></label
+                ><input type="checkbox" data-card="bloqueio" /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>TikTok</span></label
               >
               <label class="app-toggle"
-                ><input type="checkbox" data-card="bloqueio" />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>YouTube</span></label
+                ><input type="checkbox" data-card="bloqueio" /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>YouTube</span></label
               >
               <label class="app-toggle"
-                ><input type="checkbox" data-card="bloqueio" />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>WhatsApp</span></label
+                ><input type="checkbox" data-card="bloqueio" /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>WhatsApp</span></label
               >
               <label class="app-toggle"
-                ><input type="checkbox" data-card="bloqueio" />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>Twitter / X</span></label
+                ><input type="checkbox" data-card="bloqueio" /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>Twitter / X</span></label
               >
             </div>
           </div>
@@ -216,26 +193,40 @@
             </p>
             <div class="radio-group">
               <label class="radio-item"
-                ><input type="radio" name="relatorio" value="diario" />
-                <span class="radio-box"></span> <span>Diário</span></label
+                ><input type="radio" name="relatorio" value="diario" /><span
+                  class="radio-box"
+                ></span
+                ><span>Diário</span></label
               >
               <label class="radio-item"
-                ><input type="radio" name="relatorio" value="semanal" checked />
-                <span class="radio-box"></span> <span>Semanal</span></label
+                ><input
+                  type="radio"
+                  name="relatorio"
+                  value="semanal"
+                  checked
+                /><span class="radio-box"></span><span>Semanal</span></label
               >
               <label class="radio-item"
-                ><input type="radio" name="relatorio" value="mensal" />
-                <span class="radio-box"></span> <span>Mensal</span></label
+                ><input type="radio" name="relatorio" value="mensal" /><span
+                  class="radio-box"
+                ></span
+                ><span>Mensal</span></label
               >
             </div>
             <div class="radio-group" style="margin-top: 12px">
               <label class="radio-item"
-                ><input type="radio" name="formato" value="resumido" checked />
-                <span class="radio-box"></span> <span>Resumido</span></label
+                ><input
+                  type="radio"
+                  name="formato"
+                  value="resumido"
+                  checked
+                /><span class="radio-box"></span><span>Resumido</span></label
               >
               <label class="radio-item"
-                ><input type="radio" name="formato" value="completo" />
-                <span class="radio-box"></span> <span>Completo</span></label
+                ><input type="radio" name="formato" value="completo" /><span
+                  class="radio-box"
+                ></span
+                ><span>Completo</span></label
               >
             </div>
           </div>
@@ -263,32 +254,28 @@
             </p>
             <div class="app-list">
               <label class="app-toggle"
-                ><input type="checkbox" data-card="alertas" checked />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>Uso excessivo detectado</span></label
+                ><input type="checkbox" data-card="alertas" checked /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>Uso excessivo detectado</span></label
               >
               <label class="app-toggle"
-                ><input type="checkbox" data-card="alertas" checked />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>Acesso não autorizado</span></label
+                ><input type="checkbox" data-card="alertas" checked /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>Acesso não autorizado</span></label
               >
               <label class="app-toggle"
-                ><input type="checkbox" data-card="alertas" />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>App bloqueado tentou abrir</span></label
+                ><input type="checkbox" data-card="alertas" /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>App bloqueado tentou abrir</span></label
               >
               <label class="app-toggle"
-                ><input type="checkbox" data-card="alertas" />
-                <span class="toggle-track"
-                  ><span class="toggle-thumb"></span
-                ></span>
-                <span>Limite de tempo atingido</span></label
+                ><input type="checkbox" data-card="alertas" /><span
+                  class="toggle-track"
+                  ><span class="toggle-thumb"></span></span
+                ><span>Limite de tempo atingido</span></label
               >
             </div>
           </div>
@@ -317,22 +304,32 @@
             </p>
             <div class="radio-group">
               <label class="radio-item"
-                ><input type="radio" name="controle" value="ativo" checked />
-                <span class="radio-box"></span> <span>Ativo</span></label
+                ><input
+                  type="radio"
+                  name="controle"
+                  value="ativo"
+                  checked
+                /><span class="radio-box"></span><span>Ativo</span></label
               >
               <label class="radio-item"
-                ><input type="radio" name="controle" value="somente-leitura" />
-                <span class="radio-box"></span>
-                <span>Somente leitura</span></label
+                ><input
+                  type="radio"
+                  name="controle"
+                  value="somente-leitura"
+                /><span class="radio-box"></span
+                ><span>Somente leitura</span></label
               >
               <label class="radio-item"
-                ><input type="radio" name="controle" value="desativado" />
-                <span class="radio-box"></span> <span>Desativado</span></label
+                ><input type="radio" name="controle" value="desativado" /><span
+                  class="radio-box"
+                ></span
+                ><span>Desativado</span></label
               >
             </div>
           </div>
         </div>
       </div>
+      <!-- /cards-grid -->
 
       <!-- BARRA DE PROGRESSO -->
       <div class="progresso-wrap">
@@ -345,28 +342,18 @@
         </div>
       </div>
 
-      <!-- ÁUDIO DO BOTÃO -->
-      <audio id="somClique">
-        <source src="../public/sounds/transição.mp3" type="audio/mpeg" />
-      </audio>
-
-      <!-- BOTÃO CONCLUÍDO -->
+      <!-- BOTÃO CONCLUÍDO (oculto até todos os cards serem configurados) -->
       <div class="concluido-wrap" id="concluidoWrap">
         <button id="btnConcluido">
           <span class="btn-scan"></span>
-          CONFIGURACAO CONCLUIDA
+          CONFIGURAÇÃO CONCLUÍDA
         </button>
-
         <div class="concluido-sub">
           Todas as configurações foram salvas com sucesso.
         </div>
       </div>
     </div>
-
-    <!-- som do botao continuar -->
-    <audio id="somContinuar">
-      <source src="../public/sounds/start.mp3" type="audio/mpeg" />
-    </audio>
+    <!-- /central-wrapper -->
 
     <!-- MODAL DE BOAS-VINDAS -->
     <div class="modal-overlay" id="modalOverlay">

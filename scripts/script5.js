@@ -2,33 +2,9 @@
    RELÓGIO — HUD
 ========================= */
 
-function atualizarHora() {
-  const agora = new Date();
-  const h = String(agora.getHours()).padStart(2, "0");
-  const m = String(agora.getMinutes()).padStart(2, "0");
-  document.getElementById("hudHora").textContent = h + ":" + m;
-}
-
-atualizarHora();
-setInterval(atualizarHora, 1000);
-
 /* =========================
    ID DE SESSÃO — HUD
 ========================= */
-
-function gerarSessao(len) {
-  const chars = "ABCDEF0123456789";
-  return Array.from(
-    { length: len },
-    () => chars[Math.floor(Math.random() * chars.length)],
-  ).join("");
-}
-
-const sid = gerarSessao(8);
-const sidFormatado = sid.slice(0, 4) + "-" + sid.slice(4);
-
-document.getElementById("hudSessao").textContent = sidFormatado;
-document.getElementById("modalSid").textContent = "SID :: " + sidFormatado;
 
 /* =========================
    BOTÃO CONTINUAR — MODAL
@@ -55,7 +31,6 @@ document.getElementById("btnContinuar").addEventListener("click", function () {
 
   // Após 1 segundo
   setTimeout(() => {
-
     // Para o som
     somContinuar.pause();
     somContinuar.currentTime = 0;
@@ -71,7 +46,6 @@ document.getElementById("btnContinuar").addEventListener("click", function () {
       overlay.style.display = "none";
       central.classList.add("liberado");
     }, 600);
-
   }, 1000); // 1000 ms = 1 segundo
 });
 
@@ -174,12 +148,11 @@ document.querySelectorAll('input[name="controle"]').forEach((radio) => {
    BOTÃO CONCLUÍDO
 ========================= */
 
-const btnConcluido = document.getElementById('btnConcluido');
-const somClique = document.getElementById('somClique');
-const musicaFundo = document.getElementById('musicaFundo');
+const btnConcluido = document.getElementById("btnConcluido");
+const somClique = document.getElementById("somClique");
+const musicaFundo = document.getElementById("musicaFundo");
 
-btnConcluido.addEventListener('click', () => {
-
+btnConcluido.addEventListener("click", () => {
   // Evita múltiplos cliques
   btnConcluido.disabled = true;
 
@@ -195,17 +168,19 @@ btnConcluido.addEventListener('click', () => {
 
   // Após 1 segundo
   setTimeout(() => {
-
     // Para o efeito
     somClique.pause();
     somClique.currentTime = 0;
 
-    // Restaura o volume da música
-    musicaFundo.volume = volumeOriginal;
+    // Animação de scan antes de navegar
+    const scan = document.createElement("div");
+    scan.classList.add("scan-overlay");
+    document.body.appendChild(scan);
+    requestAnimationFrame(() => scan.classList.add("ativo"));
 
     // Vai para a próxima página
-    window.location.href = 'pagina5.html';
-
-  }, 1800);
-
+    setTimeout(() => {
+      window.location.href = "pagina5.html";
+    }, 1000);
+  }, 4000);
 });

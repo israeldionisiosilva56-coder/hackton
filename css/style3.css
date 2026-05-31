@@ -6,7 +6,9 @@
 /* ==============================
    RESET & CUSTOM PROPERTIES
    ============================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -63,7 +65,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,255,255,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 255, 255, 0.06) 0%, transparent 70%);
 }
 
 /* ==============================
@@ -112,8 +114,13 @@ body {
 }
 
 @keyframes brilhoTitulo {
-    from { text-shadow: 0 0 6px rgba(0, 255, 255, 0.3); }
-    to   { text-shadow: 0 0 14px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.35); }
+    from {
+        text-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+    }
+
+    to {
+        text-shadow: 0 0 14px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.35);
+    }
 }
 
 /* ==============================
@@ -388,7 +395,9 @@ body {
     animation: fadeIn 0.4s ease;
 }
 
-.rec-item:last-child { margin-bottom: 0; }
+.rec-item:last-child {
+    margin-bottom: 0;
+}
 
 .rec-bullet {
     width: 6px;
@@ -417,8 +426,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ==============================
@@ -531,8 +547,14 @@ body {
 /* ==============================
    SCROLLBAR
    ============================== */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
 ::-webkit-scrollbar-thumb {
     background: rgba(0, 255, 255, 0.5);
     border-radius: 3px;
